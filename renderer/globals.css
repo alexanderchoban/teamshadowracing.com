@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+.logo-team-text {
+  font-family: "Mr Dafoe", cursive;
+  text-transform: lowercase;
+  color: #333333;
+}
+
+.logo-team-text.white {
+  color: #ffffff;
+}
+
+.logo-shadow-text {
+  font-family: "Racing Sans One", cursive;
+  text-transform: uppercase;
+  color: #3b82f6;
+  font-size: 1.2em;
+}
+
+.logo-racing-text {
+  font-family: "Mr Dafoe", cursive;
+  color: #db2777;
+}
+
+.team-shadow-header {
+  font-family: "Racing Sans One", cursive;
+}
+
+.icon svg {
+  width: 1em;
+  height: 1em;
+  display: inline;
+  position: relative;
+  bottom: 2px;
+}
+
+a.textLink {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.imgGrid img {
+  float: left;
+}
+
+.carbon {
+  background-color: rgb(32, 32, 32);
+  background-image: linear-gradient(
+      45deg,
+      black 25%,
+      transparent 25%,
+      transparent 75%,
+      black 75%,
+      black
+    ),
+    linear-gradient(
+      45deg,
+      black 25%,
+      transparent 25%,
+      transparent 75%,
+      black 75%,
+      black
+    ),
+    linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+  background-size: 10px 10px, 10px 10px, 10px 5px;
+  background-position: 0px 0px, 5px 5px, 0px 0px;
+}
+
+/* homepage here */
+
+.tshero {
+  background: url(/images/header_2x.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 73vw;
+  max-height: 100vh;
+}
+
+/* Nav Menu */
+
+.side-menu {
+  display: none;
+}
+
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 20px 20px;
+  z-index: 999999;
+} /* Style label tag */
+
+.hamb-line {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.hamb-line::before {
+  top: 5px;
+}
+.hamb-line::after {
+  top: -5px;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+  background: black;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+  background: black;
+}
+
+nav {
+  transition: max-height 0.5s ease-out;
+  max-height: 0;
+}
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav {
+  max-height: 100%;
+}
