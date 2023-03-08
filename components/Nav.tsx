@@ -1,37 +1,19 @@
 import React, { useState } from "react";
-import clsx from "clsx";
+
 import Link from "./Link";
-
 import TeamShadowLogo from "./TeamShadowLogo";
+import clsx from "clsx";
 
-function NavLinks() {
+function NavLinkLi({ href, text }: { href: string; text: string }) {
   return (
-    <>
-      <li className="mr-3">
-        <Link
-          className="inline-block py-2 px-4 text-black no-underline"
-          href="/"
-        >
-          Home
-        </Link>
-      </li>
-      <li className="mr-3">
-        <Link
-          className="inline-block py-2 px-4 text-black no-underline"
-          href="/about"
-        >
-          About
-        </Link>
-      </li>
-      <li className="mr-3">
-        <Link
-          className="inline-block py-2 px-4 text-black no-underline"
-          href="/gallery"
-        >
-          Gallery
-        </Link>
-      </li>
-    </>
+    <li className="mr-3 w-full">
+      <Link
+        className="w-full hover:bg-pink-600 hover:text-white inline-block py-2 px-4 text-black no-underline"
+        href={href}
+      >
+        {text}
+      </Link>
+    </li>
   );
 }
 
@@ -41,7 +23,7 @@ function Nav() {
       id="header"
       className="fixed w-full z-30 top-0 bg-white shadow-lg carbon"
     >
-      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 px-2">
+      <div className="w-full pl-6 flex flex-wrap items-center justify-between mt-0 py-2 px-2">
         <Link href="/">
           <h1 className="cursor-pointer">
             <TeamShadowLogo white />
@@ -71,8 +53,14 @@ function Nav() {
           <div className="p-4">
             <TeamShadowLogo />
           </div>
-          <ul className="px-4 text-3xl space-y-2">
-            <NavLinks />
+          <ul className="p-0 text-3xl space-y-2">
+            <NavLinkLi href="/" text="🏠 Home" />
+            <NavLinkLi href="/about" text="📖 About" />
+            <NavLinkLi href="/gallery" text="🖼️ Gallery" />
+            <NavLinkLi
+              href="https://www.youtube.com/channel/UCaje4yLTTxVJT4bf7PXDk6g"
+              text="📺 YouTube"
+            />
           </ul>
         </nav>
       </div>

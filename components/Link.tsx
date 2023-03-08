@@ -7,6 +7,7 @@ function Link(props: {
   href?: string;
   className?: string;
   children: React.ReactNode;
+  style?: object;
 }) {
   const pageContext = usePageContext();
   const className = [
@@ -15,5 +16,5 @@ function Link(props: {
   ]
     .filter(Boolean)
     .join(" ");
-  return <a {...props} className={className} />;
+  return <a {...props} style={props.style} className={className} />;
 }

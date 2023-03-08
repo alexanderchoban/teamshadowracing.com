@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "../../components/Link";
+import React from "react";
 
 function YouTubeAd() {
   return (
@@ -14,7 +14,7 @@ function YouTubeAd() {
         </h3>
         <Link href="https://www.youtube.com/channel/UCaje4yLTTxVJT4bf7PXDk6g">
           <button className="bg-white text-gray-800 font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider">
-            Watch on YouTube
+            Watch on YouTube 📺
           </button>
         </Link>
       </div>

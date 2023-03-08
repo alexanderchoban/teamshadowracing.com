@@ -1,3 +1,4 @@
+import Link from "../../components/Link";
 import React from "react";
 
 function HeroBanner() {
@@ -12,9 +13,13 @@ function HeroBanner() {
             <p className="leading-normal md:text-2xl mb-8 text-center mx-auto">
               <span className="bg-blue-800 px-1">
                 Team Shadow is an online and real life automotive organization.{" "}
-                <br />
-                We strive to be the best.
               </span>
+              <br />
+              <Link href="/about">
+                <button className="shadow-lg border-2 hover:border-white border-pink-600 bg-pink-600 text-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider">
+                  Learn More
+                </button>
+              </Link>
             </p>
           </div>
         </div>

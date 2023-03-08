@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import Link from "../../components/Link";
 import MediaGrid from "../../components/MediaGrid";
-
 import { albumPhotoType } from "../../utils/getImgurAlbum";
 
 function HeroBanner({ photos }: { photos: albumPhotoType[] }) {
