@@ -40,6 +40,7 @@ function Page({ album }: { album: albumDataType }) {
             className="mb-4 rounded-md shadow-lg w-full"
             alt={alt}
             src={thumbnail}
+            key={thumbnail}
           />
         ))}
       </div>

@@ -2,16 +2,16 @@ import fetch from "node-fetch";
 
 type imageResponseType = {
   link: string;
-  description: string;
-  width: bigint;
-  height: bigint;
+  description: string | null; // Imgur descriptions can be null
+  width: number;               // Changed from bigint to number
+  height: number;              // Changed from bigint to number
 };
 
 export type albumPhotoType = {
   src: string;
   alt: string;
-  width: bigint;
-  height: bigint;
+  width: number;               // Changed from bigint to number
+  height: number;              // Changed from bigint to number
   square: string;
   thumbnail: string;
   lowThumbnail: string;
@@ -37,17 +37,18 @@ async function getImgurAlbum(albumHash: string): Promise<albumDataType> {
     throw new Error("IMGUR API ERROR: " + response.status);
   }
 
-  const {
-    data: { title, images, id },
-  } = await response.json();
+  const resJson = await response.json();
+  
+  // Safely extract data, defaulting images to an empty array if it doesn't exist
+  const { title, images = [], id } = resJson.data || {};
 
   return {
     id,
-    title,
+    title: title || "Untitled Album",
     photos: images.map(
       ({ link: src, description: alt, width, height }: imageResponseType) => ({
         src,
-        alt,
+        alt: alt || "", // Handle null descriptions gracefully
         width,
         height,
         square: [src.slice(0, -4), "s", src.slice(-4)].join(""),

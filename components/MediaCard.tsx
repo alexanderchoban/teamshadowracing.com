@@ -20,6 +20,7 @@ const MediaCard = ({ src, alt, thumbnail }: MediaCardProps) => (
     }}
   >
     <img
+      key={thumbnail ? thumbnail : src}
       src={thumbnail ? thumbnail : src}
       alt={alt}
       style={{
